@@ -82,6 +82,38 @@
             color: var(--primary-color);
         }
 
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .lang-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .lang-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
         .mobile-menu {
             display: none;
             cursor: pointer;
@@ -428,6 +460,15 @@
                 display: block;
             }
 
+            .language-switcher {
+                gap: 0.3rem;
+            }
+
+            .lang-btn {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.8rem;
+            }
+
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -478,11 +519,15 @@
         <div class="nav-container">
             <a href="#" class="logo">Triple Seven Cloud</a>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link" data-key="nav-home">Home</a></li>
+                <li><a href="#services" class="nav-link" data-key="nav-services">Services</a></li>
+                <li><a href="#about" class="nav-link" data-key="nav-about">About</a></li>
+                <li><a href="#contact" class="nav-link" data-key="nav-contact">Contact</a></li>
             </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="switchLanguage('en')" id="lang-en">EN</button>
+                <button class="lang-btn" onclick="switchLanguage('mm')" id="lang-mm">မြန်မာ</button>
+            </div>
             <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
             </div>
@@ -493,12 +538,12 @@
     <section id="home" class="hero">
         <div class="hero-content fade-in-up">
             <h1>Triple Seven Cloud</h1>
-            <p class="tagline">Leading Software Development & Cloud Solutions</p>
+            <p class="tagline" data-key="hero-tagline">Leading Software Development & Cloud Solutions</p>
             <div class="location">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Mandalay, Myanmar</span>
+                <span data-key="hero-location">Mandalay, Myanmar</span>
             </div>
-            <a href="#contact" class="cta-button">Get Started Today</a>
+            <a href="#contact" class="cta-button" data-key="hero-cta">Get Started Today</a>
         </div>
     </section>
 
@@ -506,22 +551,22 @@
     <section id="services" class="section section-light">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Comprehensive IT solutions tailored for modern businesses across Myanmar and beyond</p>
+                <h2 class="section-title" data-key="services-title">Our Services</h2>
+                <p class="section-subtitle" data-key="services-subtitle">Comprehensive IT solutions tailored for modern businesses across Myanmar and beyond</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Software Development</h3>
-                    <p>Custom software solutions built with cutting-edge technologies to drive your business forward.</p>
+                    <h3 data-key="service1-title">Software Development</h3>
+                    <p data-key="service1-desc">Custom software solutions built with cutting-edge technologies to drive your business forward.</p>
                     <ul>
-                        <li>Web Applications & Portals</li>
-                        <li>Mobile App Development (iOS/Android)</li>
-                        <li>Enterprise Software Solutions</li>
-                        <li>API Development & Integration</li>
-                        <li>Database Design & Optimization</li>
+                        <li data-key="service1-item1">Web Applications & Portals</li>
+                        <li data-key="service1-item2">Mobile App Development (iOS/Android)</li>
+                        <li data-key="service1-item3">Enterprise Software Solutions</li>
+                        <li data-key="service1-item4">API Development & Integration</li>
+                        <li data-key="service1-item5">Database Design & Optimization</li>
                     </ul>
                 </div>
                 
@@ -529,14 +574,14 @@
                     <div class="service-icon">
                         <i class="fas fa-cloud-upload-alt"></i>
                     </div>
-                    <h3>Cloud Migration</h3>
-                    <p>Seamlessly transition your infrastructure to the cloud with minimal downtime and maximum efficiency.</p>
+                    <h3 data-key="service2-title">Cloud Migration</h3>
+                    <p data-key="service2-desc">Seamlessly transition your infrastructure to the cloud with minimal downtime and maximum efficiency.</p>
                     <ul>
-                        <li>Cloud Strategy & Planning</li>
-                        <li>Infrastructure Assessment</li>
-                        <li>Secure Data Migration</li>
-                        <li>Application Modernization</li>
-                        <li>Cost Optimization Strategies</li>
+                        <li data-key="service2-item1">Cloud Strategy & Planning</li>
+                        <li data-key="service2-item2">Infrastructure Assessment</li>
+                        <li data-key="service2-item3">Secure Data Migration</li>
+                        <li data-key="service2-item4">Application Modernization</li>
+                        <li data-key="service2-item5">Cost Optimization Strategies</li>
                     </ul>
                 </div>
                 
@@ -544,14 +589,14 @@
                     <div class="service-icon">
                         <i class="fas fa-server"></i>
                     </div>
-                    <h3>Cloud Architecture</h3>
-                    <p>Design and implement scalable, reliable cloud architectures that grow with your business needs.</p>
+                    <h3 data-key="service3-title">Cloud Architecture</h3>
+                    <p data-key="service3-desc">Design and implement scalable, reliable cloud architectures that grow with your business needs.</p>
                     <ul>
-                        <li>Cloud Infrastructure Design</li>
-                        <li>Multi-Cloud Solutions</li>
-                        <li>Microservices Architecture</li>
-                        <li>Auto-scaling & Load Balancing</li>
-                        <li>Performance Optimization</li>
+                        <li data-key="service3-item1">Cloud Infrastructure Design</li>
+                        <li data-key="service3-item2">Multi-Cloud Solutions</li>
+                        <li data-key="service3-item3">Microservices Architecture</li>
+                        <li data-key="service3-item4">Auto-scaling & Load Balancing</li>
+                        <li data-key="service3-item5">Performance Optimization</li>
                     </ul>
                 </div>
                 
@@ -559,14 +604,14 @@
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Security Consulting</h3>
-                    <p>Comprehensive security solutions to protect your digital assets and ensure regulatory compliance.</p>
+                    <h3 data-key="service4-title">Security Consulting</h3>
+                    <p data-key="service4-desc">Comprehensive security solutions to protect your digital assets and ensure regulatory compliance.</p>
                     <ul>
-                        <li>Security Audits & Assessments</li>
-                        <li>Compliance Management</li>
-                        <li>Identity & Access Management</li>
-                        <li>Data Protection & Privacy</li>
-                        <li>Incident Response Planning</li>
+                        <li data-key="service4-item1">Security Audits & Assessments</li>
+                        <li data-key="service4-item2">Compliance Management</li>
+                        <li data-key="service4-item3">Identity & Access Management</li>
+                        <li data-key="service4-item4">Data Protection & Privacy</li>
+                        <li data-key="service4-item5">Incident Response Planning</li>
                     </ul>
                 </div>
                 
@@ -574,14 +619,14 @@
                     <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Digital Transformation</h3>
-                    <p>Transform your business processes with innovative digital solutions and modern technologies.</p>
+                    <h3 data-key="service5-title">Digital Transformation</h3>
+                    <p data-key="service5-desc">Transform your business processes with innovative digital solutions and modern technologies.</p>
                     <ul>
-                        <li>Process Automation</li>
-                        <li>Digital Workflow Design</li>
-                        <li>System Integration</li>
-                        <li>IoT Solutions</li>
-                        <li>AI & Machine Learning</li>
+                        <li data-key="service5-item1">Process Automation</li>
+                        <li data-key="service5-item2">Digital Workflow Design</li>
+                        <li data-key="service5-item3">System Integration</li>
+                        <li data-key="service5-item4">IoT Solutions</li>
+                        <li data-key="service5-item5">AI & Machine Learning</li>
                     </ul>
                 </div>
                 
@@ -589,14 +634,14 @@
                     <div class="service-icon">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3>Technical Support</h3>
-                    <p>24/7 technical support and maintenance to ensure your systems run smoothly and efficiently.</p>
+                    <h3 data-key="service6-title">Technical Support</h3>
+                    <p data-key="service6-desc">24/7 technical support and maintenance to ensure your systems run smoothly and efficiently.</p>
                     <ul>
-                        <li>System Monitoring</li>
-                        <li>Performance Tuning</li>
-                        <li>Backup & Recovery</li>
-                        <li>Technical Consultation</li>
-                        <li>Emergency Response</li>
+                        <li data-key="service6-item1">System Monitoring</li>
+                        <li data-key="service6-item2">Performance Tuning</li>
+                        <li data-key="service6-item3">Backup & Recovery</li>
+                        <li data-key="service6-item4">Technical Consultation</li>
+                        <li data-key="service6-item5">Emergency Response</li>
                     </ul>
                 </div>
             </div>
@@ -746,6 +791,179 @@
     </footer>
 
     <script>
+        // Language translations
+        const translations = {
+            en: {
+                // Navigation
+                'nav-home': 'Home',
+                'nav-services': 'Services', 
+                'nav-about': 'About',
+                'nav-contact': 'Contact',
+                
+                // Hero Section
+                'hero-tagline': 'Leading Software Development & Cloud Solutions',
+                'hero-location': 'Mandalay, Myanmar',
+                'hero-cta': 'Get Started Today',
+                
+                // Services Section
+                'services-title': 'Our Services',
+                'services-subtitle': 'Comprehensive IT solutions tailored for modern businesses across Myanmar and beyond',
+                
+                // Service 1 - Software Development
+                'service1-title': 'Software Development',
+                'service1-desc': 'Custom software solutions built with cutting-edge technologies to drive your business forward.',
+                'service1-item1': 'Web Applications & Portals',
+                'service1-item2': 'Mobile App Development (iOS/Android)',
+                'service1-item3': 'Enterprise Software Solutions',
+                'service1-item4': 'API Development & Integration',
+                'service1-item5': 'Database Design & Optimization',
+                
+                // Service 2 - Cloud Migration
+                'service2-title': 'Cloud Migration',
+                'service2-desc': 'Seamlessly transition your infrastructure to the cloud with minimal downtime and maximum efficiency.',
+                'service2-item1': 'Cloud Strategy & Planning',
+                'service2-item2': 'Infrastructure Assessment',
+                'service2-item3': 'Secure Data Migration',
+                'service2-item4': 'Application Modernization',
+                'service2-item5': 'Cost Optimization Strategies',
+                
+                // Service 3 - Cloud Architecture
+                'service3-title': 'Cloud Architecture',
+                'service3-desc': 'Design and implement scalable, reliable cloud architectures that grow with your business needs.',
+                'service3-item1': 'Cloud Infrastructure Design',
+                'service3-item2': 'Multi-Cloud Solutions',
+                'service3-item3': 'Microservices Architecture',
+                'service3-item4': 'Auto-scaling & Load Balancing',
+                'service3-item5': 'Performance Optimization',
+                
+                // Service 4 - Security Consulting
+                'service4-title': 'Security Consulting',
+                'service4-desc': 'Comprehensive security solutions to protect your digital assets and ensure regulatory compliance.',
+                'service4-item1': 'Security Audits & Assessments',
+                'service4-item2': 'Compliance Management',
+                'service4-item3': 'Identity & Access Management',
+                'service4-item4': 'Data Protection & Privacy',
+                'service4-item5': 'Incident Response Planning',
+                
+                // Service 5 - Digital Transformation
+                'service5-title': 'Digital Transformation',
+                'service5-desc': 'Transform your business processes with innovative digital solutions and modern technologies.',
+                'service5-item1': 'Process Automation',
+                'service5-item2': 'Digital Workflow Design',
+                'service5-item3': 'System Integration',
+                'service5-item4': 'IoT Solutions',
+                'service5-item5': 'AI & Machine Learning',
+                
+                // Service 6 - Technical Support
+                'service6-title': 'Technical Support',
+                'service6-desc': '24/7 technical support and maintenance to ensure your systems run smoothly and efficiently.',
+                'service6-item1': 'System Monitoring',
+                'service6-item2': 'Performance Tuning',
+                'service6-item3': 'Backup & Recovery',
+                'service6-item4': 'Technical Consultation',
+                'service6-item5': 'Emergency Response'
+            },
+            mm: {
+                // Navigation
+                'nav-home': 'ပင်မစာမျက်နှာ',
+                'nav-services': 'ဝန်ဆောင်မှုများ',
+                'nav-about': 'အကြောင်း',
+                'nav-contact': 'ဆက်သွယ်ရန်',
+                
+                // Hero Section
+                'hero-tagline': 'မြန်မာနိုင်ငံ၏ ဦးဆောင် ဆော့ဝဲရေးနှင့် Cloud ဝန်ဆောင်မှု',
+                'hero-location': 'မန္တလေး၊ မြန်မာနိုင်ငံ',
+                'hero-cta': 'ယနေ့ပဲ စတင်လိုက်ပါ',
+                
+                // Services Section
+                'services-title': 'ကျွန်ုပ်တို့၏ ဝန်ဆောင်မှုများ',
+                'services-subtitle': 'မြန်မာနိုင်ငံနှင့် ကမ္ဘာတစ်ဝှမ်းရှိ ခေတ်မီ စီးပွားရေးလုပ်ငန်းများအတွက် ပြည့်စုံသော IT ဖြေရှင်းချက်များ',
+                
+                // Service 1 - Software Development
+                'service1-title': 'ဆော့ဝဲရေး တည်ဆောက်မှု',
+                'service1-desc': 'သင့်လုပ်ငန်းကို ဖွံ့ဖြိုးတိုးတက်စေရန် နောက်ဆုံးပေါ် နည်းပညာများဖြင့် ပြုလုပ်ထားသော စိတ်ကြိုက် ဆော့ဝဲရေး ဖြေရှင်းချက်များ',
+                'service1-item1': 'ဝဘ်အပ်ပလီကေးရှင်းများနှင့် Portal များ',
+                'service1-item2': 'မိုဘိုင်းအက်ပ် တည်ဆောက်မှု (iOS/Android)',
+                'service1-item3': 'လုပ်ငန်းအဆင့် ဆော့ဝဲရေး ဖြေရှင်းချက်များ',
+                'service1-item4': 'API တည်ဆောက်မှုနှင့် ပေါင်းစပ်မှု',
+                'service1-item5': 'ဒေတာဘေ့စ် ဒီဇိုင်းနှင့် ပိုမိုကောင်းမွန်အောင် ပြုလုပ်မှု',
+                
+                // Service 2 - Cloud Migration
+                'service2-title': 'Cloud သို့ ပြောင်းရွှေ့မှု',
+                'service2-desc': 'အချိန်ရပ်နားမှု အနည်းဆုံးနှင့် စွမ်းဆောင်ရည် အများဆုံးဖြင့် သင့် infrastructure ကို cloud သို့ ချောမွေ့စွာ ပြောင်းရွှေ့ပေးမှု',
+                'service2-item1': 'Cloud မဟာဗျူဟာနှင့် အစီအစဉ်',
+                'service2-item2': 'Infrastructure အကဲဖြတ်မှု',
+                'service2-item3': 'လုံခြုံသော ဒေတာ ပြောင်းရွှေ့မှု',
+                'service2-item4': 'အပ်ပလီကေးရှင်း ခေတ်မီအောင်ပြုလုပ်မှု',
+                'service2-item5': 'ကုန်ကျစရိတ် ပြန်လည်သုံးသပ် ပိုမိုကောင်းမွန်အောင်ပြုလုပ်မှု',
+                
+                // Service 3 - Cloud Architecture
+                'service3-title': 'Cloud ဗိသုကာဆွဲမှု',
+                'service3-desc': 'သင့်လုပ်ငန်း လိုအပ်ချက်များနှင့်အတူ ကြီးထွားနိုင်သော၊ ယုံကြည်စိတ်ချရသော cloud ဗိသုကာများကို ဒီဇိုင်းဆွဲပြီး အကောင်အထည်ဖော်ပေးမှု',
+                'service3-item1': 'Cloud Infrastructure ဒီဇိုင်း',
+                'service3-item2': 'Multi-Cloud ဖြေရှင်းချက်များ',
+                'service3-item3': 'Microservices ဗိသုကာ',
+                'service3-item4': 'အလိုအလျောက် ဝန်ထမ်းဖြန့်ခွဲမှုနှင့် Load Balancing',
+                'service3-item5': 'စွမ်းဆောင်ရည် မြှင့်တင်မှု',
+                
+                // Service 4 - Security Consulting
+                'service4-title': 'လုံခြုံရေး အကြံပေးမှု',
+                'service4-desc': 'သင့်ဒစ်ဂျစ်တယ် ပိုင်ဆိုင်မှုများကို အကာအကွယ်ပေးရန်နှင့် စည်းမျဉ်းအညီ လိုက်နာမှုကို သေချာစေရန် ပြည့်စုံသော လုံခြုံရေး ဖြေရှင်းချက်များ',
+                'service4-item1': 'လုံခြုံရေး စာရင်းစစ်ခြင်းနှင့် အကဲဖြတ်ခြင်း',
+                'service4-item2': 'စည်းမျဉ်းစည်းကမ်းများ စီမံခန့်ခွဲမှု',
+                'service4-item3': 'အထောက်အထား နှင့် ဝင်ရောက်ခွင့် စီမံခန့်ခွဲမှု',
+                'service4-item4': 'ဒေတာ အကာအကွယ်နှင့် ကိုယ်ပိုင်အချက်အလက်',
+                'service4-item5': 'ဖြစ်ရပ်ဆိုးများ တုံ့ပြန်ရေး အစီအစဉ်',
+                
+                // Service 5 - Digital Transformation
+                'service5-title': 'ဒစ်ဂျစ်တယ် အသွင်ပြောင်းလဲမှု',
+                'service5-desc': 'ဆန်းသစ်သော ဒစ်ဂျစ်တယ် ဖြေရှင်းချက်များနှင့် ခေတ်မီ နည်းပညာများဖြင့် သင့်လုပ်ငန်း လုပ်ငန်းစဉ်များကို အသွင်ပြောင်းလဲမှု',
+                'service5-item1': 'လုပ်ငန်းစဉ် အလိုအလျောက်ပြုလုပ်မှု',
+                'service5-item2': 'ဒစ်ဂျစ်တယ် လုပ်ငန်းစီးဆင်းမှု ဒီဇိုင်း',
+                'service5-item3': 'စနစ် ပေါင်းစပ်မှု',
+                'service5-item4': 'IoT ဖြေရှင်းချက်များ',
+                'service5-item5': 'AI နှင့် Machine Learning',
+                
+                // Service 6 - Technical Support
+                'service6-title': 'နည်းပညာ ပံ့ပိုးမှု',
+                'service6-desc': 'သင့်စနစ်များ ချောမွေ့စွာနှင့် ထိရောက်စွာ လည်ပတ်နေစေရန် ၂၄/၇ နည်းပညာ ပံ့ပိုးမှုနှင့် ပြုပြင်ထိန်းသိမ်းမှု',
+                'service6-item1': 'စနစ် စောင့်ကြည့်မှု',
+                'service6-item2': 'စွမ်းဆောင်ရည် ပြုပြင်ချိန်ညှိမှု',
+                'service6-item3': 'အရန်သိမ်းမှုနှင့် ပြန်လည်ရယူမှု',
+                'service6-item4': 'နည်းပညာ အကြံပေးမှု',
+                'service6-item5': 'အရေးပေါ် တုံ့ပြန်မှု'
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update active language button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`lang-${lang}`).classList.add('active');
+            
+            // Update all text elements
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Store language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        function loadLanguagePreference() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && translations[savedLang]) {
+                switchLanguage(savedLang);
+            }
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -808,6 +1026,11 @@
         if (statsSection) {
             observer.observe(statsSection);
         }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadLanguagePreference();
+        });
     </script>
 </body>
 </html>
