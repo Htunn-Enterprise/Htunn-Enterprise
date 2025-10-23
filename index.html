@@ -334,6 +334,96 @@
             align-items: center;
         }
 
+        /* Products Section */
+        .products {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .product-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .product-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .product-features {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .product-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .product-feature i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .product-demo {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .product-demo i {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .demo-subtitle {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .demo-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+            background: #e68900;
+        }
+
         .about-text {
             font-size: 1.1rem;
             color: var(--text-secondary);
@@ -474,6 +564,19 @@
                 gap: 2rem;
             }
 
+            .product-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-demo {
+                padding: 2rem;
+            }
+
+            .product-demo i {
+                font-size: 3rem;
+            }
+
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -521,6 +624,7 @@
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link" data-key="nav-home">Home</a></li>
                 <li><a href="#services" class="nav-link" data-key="nav-services">Services</a></li>
+                <li><a href="#products" class="nav-link" data-key="nav-products">Products</a></li>
                 <li><a href="#about" class="nav-link" data-key="nav-about">About</a></li>
                 <li><a href="#contact" class="nav-link" data-key="nav-contact">Contact</a></li>
             </ul>
@@ -672,6 +776,59 @@
         </div>
     </section>
 
+    <!-- Products Section -->
+    <section id="products" class="section products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-key="products-title" style="color: white;">Our Products</h2>
+                <p class="section-subtitle" data-key="products-subtitle" style="color: rgba(255,255,255,0.9);">Innovative software solutions designed specifically for Myanmar businesses</p>
+            </div>
+            <div class="product-showcase">
+                <div class="product-info">
+                    <h3 data-key="product-pos-title">Triple Seven POS</h3>
+                    <p data-key="product-pos-desc">A comprehensive Point of Sale and Supermarket Inventory Management System designed specifically for Myanmar retail businesses. Streamline your operations, track inventory in real-time, and boost your sales with our intuitive and powerful POS solution.</p>
+                    
+                    <div class="product-features">
+                        <div class="product-feature">
+                            <i class="fas fa-cash-register"></i>
+                            <span data-key="feature-pos">Complete Point of Sale System</span>
+                        </div>
+                        <div class="product-feature">
+                            <i class="fas fa-boxes"></i>
+                            <span data-key="feature-inventory">Real-time Inventory Management</span>
+                        </div>
+                        <div class="product-feature">
+                            <i class="fas fa-chart-line"></i>
+                            <span data-key="feature-analytics">Sales Analytics & Reporting</span>
+                        </div>
+                        <div class="product-feature">
+                            <i class="fas fa-users"></i>
+                            <span data-key="feature-customers">Customer Management</span>
+                        </div>
+                        <div class="product-feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span data-key="feature-mobile">Mobile-Friendly Interface</span>
+                        </div>
+                        <div class="product-feature">
+                            <i class="fas fa-language"></i>
+                            <span data-key="feature-myanmar">Myanmar Language Support</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-demo">
+                    <i class="fas fa-store"></i>
+                    <div class="demo-title" data-key="demo-title">Try Our POS System</div>
+                    <p class="demo-subtitle" data-key="demo-subtitle">Experience the power of our Point of Sale system with a live demo</p>
+                    <a href="https://pos.tripleseven.cloud" target="_blank" class="demo-button" data-key="demo-button">Launch Demo</a>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                        <span data-key="demo-url">pos.tripleseven.cloud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="section section-dark">
         <div class="container">
@@ -771,6 +928,11 @@
                     <p><a href="#services">Security Consulting</a></p>
                 </div>
                 <div class="footer-section">
+                    <h4>Products</h4>
+                    <p><a href="#products">Triple Seven POS</a></p>
+                    <p><a href="https://pos.tripleseven.cloud" target="_blank">POS Demo</a></p>
+                </div>
+                <div class="footer-section">
                     <h4>Company</h4>
                     <p><a href="#about">About Us</a></p>
                     <p><a href="#contact">Contact</a></p>
@@ -796,7 +958,8 @@
             en: {
                 // Navigation
                 'nav-home': 'Home',
-                'nav-services': 'Services', 
+                'nav-services': 'Services',
+                'nav-products': 'Products',
                 'nav-about': 'About',
                 'nav-contact': 'Contact',
                 
@@ -861,12 +1024,29 @@
                 'service6-item2': 'Performance Tuning',
                 'service6-item3': 'Backup & Recovery',
                 'service6-item4': 'Technical Consultation',
-                'service6-item5': 'Emergency Response'
+                'service6-item5': 'Emergency Response',
+                
+                // Products Section
+                'products-title': 'Our Products',
+                'products-subtitle': 'Innovative software solutions designed specifically for Myanmar businesses',
+                'product-pos-title': 'Triple Seven POS',
+                'product-pos-desc': 'A comprehensive Point of Sale and Supermarket Inventory Management System designed specifically for Myanmar retail businesses. Streamline your operations, track inventory in real-time, and boost your sales with our intuitive and powerful POS solution.',
+                'feature-pos': 'Complete Point of Sale System',
+                'feature-inventory': 'Real-time Inventory Management',
+                'feature-analytics': 'Sales Analytics & Reporting',
+                'feature-customers': 'Customer Management',
+                'feature-mobile': 'Mobile-Friendly Interface',
+                'feature-myanmar': 'Myanmar Language Support',
+                'demo-title': 'Try Our POS System',
+                'demo-subtitle': 'Experience the power of our Point of Sale system with a live demo',
+                'demo-button': 'Launch Demo',
+                'demo-url': 'pos.tripleseven.cloud'
             },
             mm: {
                 // Navigation
                 'nav-home': 'ပင်မစာမျက်နှာ',
                 'nav-services': 'ဝန်ဆောင်မှုများ',
+                'nav-products': 'ထုတ်ကုန်များ',
                 'nav-about': 'အကြောင်း',
                 'nav-contact': 'ဆက်သွယ်ရန်',
                 
@@ -931,7 +1111,23 @@
                 'service6-item2': 'စွမ်းဆောင်ရည် ပြုပြင်ချိန်ညှိမှု',
                 'service6-item3': 'အရန်သိမ်းမှုနှင့် ပြန်လည်ရယူမှု',
                 'service6-item4': 'နည်းပညာ အကြံပေးမှု',
-                'service6-item5': 'အရေးပေါ် တုံ့ပြန်မှု'
+                'service6-item5': 'အရေးပေါ် တုံ့ပြန်မှု',
+                
+                // Products Section
+                'products-title': 'ကျွန်ုပ်တို့၏ ထုတ်ကုန်များ',
+                'products-subtitle': 'မြန်မာနိုင်ငံ လုပ်ငန်းများအတွက် အထူးဒီဇိုင်းထုတ်ထားသော ဆန်းသစ်သော ဆော့ဝဲရေး ဖြေရှင်းချက်များ',
+                'product-pos-title': 'Triple Seven POS',
+                'product-pos-desc': 'မြန်မာနိုင်ငံ လက်လီရောင်းချမှု လုပ်ငန်းများအတွက် အထူးဒီဇိုင်းထုတ်ထားသော ပြည့်စုံသော Point of Sale နှင့် ဆူပါမားကက် ပစ္စည်းကိန်း စီမံခန့်ခွဲမှု စနစ်။ သင့်လုပ်ငန်းလည်ပတ်မှုကို ချောမွေ့စေပြီး၊ ပစ္စည်းကိန်းကို အချိန်နှင့်တပြေးညီ ခြေရာခံကာ၊ ကျွန်ုပ်တို့၏ အသုံးပြုရလွယ်ကူပြီး အစွမ်းထက်သော POS ဖြေရှင်းချက်ဖြင့် သင့်ရောင်းချမှုကို မြှင့်တင်ပါ။',
+                'feature-pos': 'ပြည့်စုံသော Point of Sale စနစ်',
+                'feature-inventory': 'အချိန်နှင့်တပြေးညီ ပစ္စည်းကိန်း စီမံခန့်ခွဲမှု',
+                'feature-analytics': 'ရောင်းချမှု ခွဲခြမ်းစိတ်ဖြာမှုနှင့် အစီရင်ခံစာများ',
+                'feature-customers': 'ဖောက်သည် စီမံခန့်ခွဲမှု',
+                'feature-mobile': 'မိုဘိုင်းဖုန်းနှင့် သဟဇာတဖြစ်သော အင်တာဖေ့စ်',
+                'feature-myanmar': 'မြန်မာဘာသာ ပံ့ပိုးမှု',
+                'demo-title': 'ကျွန်ုပ်တို့၏ POS စနစ်ကို စမ်းကြည့်ပါ',
+                'demo-subtitle': 'လက်ငင်း demo ဖြင့် ကျွန်ုပ်တို့၏ Point of Sale စနစ်၏ စွမ်းအားကို ခံစားကြည့်ပါ',
+                'demo-button': 'Demo လွှတ်တင်ရန်',
+                'demo-url': 'pos.tripleseven.cloud'
             }
         };
 
@@ -995,17 +1191,26 @@
         function animateCounters() {
             const counters = document.querySelectorAll('.stat-number');
             counters.forEach(counter => {
-                const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
+                const originalText = counter.textContent;
+                
+                // Skip animation for non-numeric content like "24/7"
+                if (originalText.includes('/') || originalText.includes(':')) {
+                    return;
+                }
+                
+                const target = parseInt(originalText.replace(/[^\d]/g, ''));
                 if (target > 0) {
                     let count = 0;
                     const increment = target / 50;
+                    const suffix = originalText.replace(/\d+/, '');
+                    
                     const timer = setInterval(() => {
                         count += increment;
                         if (count >= target) {
-                            counter.textContent = counter.textContent.replace(/\d+/, target);
+                            counter.textContent = target + suffix;
                             clearInterval(timer);
                         } else {
-                            counter.textContent = counter.textContent.replace(/\d+/, Math.floor(count));
+                            counter.textContent = Math.floor(count) + suffix;
                         }
                     }, 30);
                 }
