@@ -90,16 +90,17 @@
         }
 
         .lang-btn {
-            padding: 0.4rem 0.8rem;
+            padding: 0.4rem 0.7rem;
             border: 1px solid var(--border-color);
             background: transparent;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: all 0.3s ease;
             text-decoration: none;
             color: var(--text-primary);
+            min-width: 50px;
         }
 
         .lang-btn:hover {
@@ -645,6 +646,7 @@
             <div class="language-switcher">
                 <button class="lang-btn active" onclick="switchLanguage('en')" id="lang-en">EN</button>
                 <button class="lang-btn" onclick="switchLanguage('mm')" id="lang-mm">မြန်မာ</button>
+                <button class="lang-btn" onclick="switchLanguage('zh')" id="lang-zh">中文</button>
             </div>
             <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
@@ -772,19 +774,19 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <span class="stat-number">50+</span>
-                    <span class="stat-label">Projects Completed</span>
+                    <span class="stat-label" data-key="stat-projects">Projects Completed</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">25+</span>
-                    <span class="stat-label">Happy Clients</span>
+                    <span class="stat-label" data-key="stat-clients">Happy Clients</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">3+</span>
-                    <span class="stat-label">Years Experience</span>
+                    <span class="stat-label" data-key="stat-experience">Years Experience</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">24/7</span>
-                    <span class="stat-label">Support Available</span>
+                    <span class="stat-label" data-key="stat-support">Support Available</span>
                 </div>
             </div>
         </div>
@@ -799,8 +801,8 @@
             </div>
             <div class="product-showcase">
                 <div class="product-info">
-                    <h3 data-key="product-pos-title">Triple Seven POS</h3>
-                    <p data-key="product-pos-desc">A comprehensive Point of Sale and Supermarket Inventory Management System designed specifically for Myanmar retail businesses. Streamline your operations, track inventory in real-time, and boost your sales with our intuitive and powerful POS solution.</p>
+                    <h3 data-key="product-pos-title">Triple Seven POS and Restaurant Management System</h3>
+                    <p data-key="product-pos-desc">A comprehensive Point of Sale, Supermarket Inventory Management, and Restaurant Management System designed specifically for Myanmar retail and hospitality businesses. From supermarkets to restaurants, cafes to retail stores - streamline your operations, track inventory in real-time, manage tables and orders efficiently, and boost your sales with our intuitive and powerful all-in-one solution.</p>
                     
                     <div class="product-features">
                         <div class="product-feature">
@@ -810,6 +812,10 @@
                         <div class="product-feature">
                             <i class="fas fa-boxes"></i>
                             <span data-key="feature-inventory">Real-time Inventory Management</span>
+                        </div>
+                        <div class="product-feature">
+                            <i class="fas fa-utensils"></i>
+                            <span data-key="feature-restaurant">Restaurant & Table Management</span>
                         </div>
                         <div class="product-feature">
                             <i class="fas fa-chart-line"></i>
@@ -825,15 +831,15 @@
                         </div>
                         <div class="product-feature">
                             <i class="fas fa-language"></i>
-                            <span data-key="feature-myanmar">Myanmar Language Support</span>
+                            <span data-key="feature-multilang">Multi-Language Support (Myanmar, English, Chinese)</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="product-demo">
                     <i class="fas fa-store"></i>
-                    <div class="demo-title" data-key="demo-title">Try Our POS System</div>
-                    <p class="demo-subtitle" data-key="demo-subtitle">Experience the power of our Point of Sale system with a live demo</p>
+                    <div class="demo-title" data-key="demo-title">Try Our POS & Restaurant System</div>
+                    <p class="demo-subtitle" data-key="demo-subtitle">Experience the power of our all-in-one management system with a live demo</p>
                     <a href="https://pos.tripleseven.cloud" target="_blank" class="demo-button" data-key="demo-button">Launch Demo</a>
                     <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
                         <span data-key="demo-url">pos.tripleseven.cloud</span>
@@ -847,16 +853,16 @@
     <section id="about" class="section section-dark">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About Triple Seven Cloud</h2>
-                <p class="section-subtitle">Your trusted technology partner in Myanmar's digital transformation journey</p>
+                <h2 class="section-title" data-key="about-title">About Triple Seven Cloud</h2>
+                <p class="section-subtitle" data-key="about-subtitle">Your trusted technology partner in Myanmar's digital transformation journey</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Founded in the heart of Mandalay, Triple Seven Cloud is a forward-thinking software development startup dedicated to empowering businesses across Myanmar with cutting-edge technology solutions.</p>
+                    <p data-key="about-para1">Founded in the heart of Mandalay, Triple Seven Cloud is a forward-thinking software development startup dedicated to empowering businesses across Myanmar with cutting-edge technology solutions.</p>
                     
-                    <p>We specialize in cloud technologies, custom software development, and digital transformation services that help businesses modernize their operations and achieve sustainable growth in today's competitive landscape.</p>
+                    <p data-key="about-para2">We specialize in cloud technologies, custom software development, and digital transformation services that help businesses modernize their operations and achieve sustainable growth in today's competitive landscape.</p>
                     
-                    <p>Our team of experienced developers and cloud architects brings international expertise to the local market, ensuring our clients receive world-class solutions tailored to the unique challenges and opportunities in Myanmar.</p>
+                    <p data-key="about-para3">Our team of experienced developers and cloud architects brings international expertise to the local market, ensuring our clients receive world-class solutions tailored to the unique challenges and opportunities in Myanmar.</p>
                 </div>
                 <div class="about-features">
                     <div class="feature-item">
@@ -864,8 +870,8 @@
                             <i class="fas fa-rocket"></i>
                         </div>
                         <div>
-                            <strong>Innovation First</strong><br>
-                            Leveraging latest technologies to deliver cutting-edge solutions
+                            <strong data-key="feature1-title">Innovation First</strong><br>
+                            <span data-key="feature1-desc">Leveraging latest technologies to deliver cutting-edge solutions</span>
                         </div>
                     </div>
                     <div class="feature-item">
@@ -873,8 +879,8 @@
                             <i class="fas fa-users"></i>
                         </div>
                         <div>
-                            <strong>Local Expertise</strong><br>
-                            Deep understanding of Myanmar's business landscape and needs
+                            <strong data-key="feature2-title">Local Expertise</strong><br>
+                            <span data-key="feature2-desc">Deep understanding of Myanmar's business landscape and needs</span>
                         </div>
                     </div>
                     <div class="feature-item">
@@ -882,8 +888,8 @@
                             <i class="fas fa-award"></i>
                         </div>
                         <div>
-                            <strong>Quality Assured</strong><br>
-                            Commitment to delivering high-quality, reliable solutions
+                            <strong data-key="feature3-title">Quality Assured</strong><br>
+                            <span data-key="feature3-desc">Commitment to delivering high-quality, reliable solutions</span>
                         </div>
                     </div>
                     <div class="feature-item">
@@ -891,8 +897,8 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <div>
-                            <strong>Agile Delivery</strong><br>
-                            Fast, iterative development with transparent communication
+                            <strong data-key="feature4-title">Agile Delivery</strong><br>
+                            <span data-key="feature4-desc">Fast, iterative development with transparent communication</span>
                         </div>
                     </div>
                 </div>
@@ -904,14 +910,14 @@
     <section id="contact" class="section contact">
         <div class="container">
             <div class="contact-content">
-                <h2>Ready to Transform Your Business?</h2>
-                <p>Let's discuss how Triple Seven Cloud can help you achieve your technology goals and drive your business forward.</p>
-                <a href="mailto:info@tripleseven.cloud" class="cta-button">Contact Us Today</a>
+                <h2 data-key="contact-title">Ready to Transform Your Business?</h2>
+                <p data-key="contact-desc">Let's discuss how Triple Seven Cloud can help you achieve your technology goals and drive your business forward.</p>
+                <a href="mailto:info@tripleseven.cloud" class="cta-button" data-key="contact-cta">Contact Us Today</a>
                 
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Mandalay, Myanmar</span>
+                        <span data-key="contact-location">Mandalay, Myanmar</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -919,7 +925,7 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-clock"></i>
-                        <span>Mon - Fri: 9AM - 6PM (MMT)</span>
+                        <span data-key="contact-hours">Mon - Fri: 9AM - 6PM (MMT)</span>
                     </div>
                 </div>
             </div>
@@ -943,8 +949,8 @@
                 </div>
                 <div class="footer-section">
                     <h4>Products</h4>
-                    <p><a href="#products">Triple Seven POS</a></p>
-                    <p><a href="https://pos.tripleseven.cloud" target="_blank">POS Demo</a></p>
+                    <p><a href="#products">Triple Seven POS & Restaurant System</a></p>
+                    <p><a href="https://pos.tripleseven.cloud" target="_blank">Live Demo</a></p>
                 </div>
                 <div class="footer-section">
                     <h4>Company</h4>
@@ -1043,18 +1049,47 @@
                 // Products Section
                 'products-title': 'Our Products',
                 'products-subtitle': 'Innovative software solutions designed specifically for Myanmar businesses',
-                'product-pos-title': 'Triple Seven POS',
-                'product-pos-desc': 'A comprehensive Point of Sale and Supermarket Inventory Management System designed specifically for Myanmar retail businesses. Streamline your operations, track inventory in real-time, and boost your sales with our intuitive and powerful POS solution.',
+                'product-pos-title': 'Triple Seven POS and Restaurant Management System',
+                'product-pos-desc': 'A comprehensive Point of Sale, Supermarket Inventory Management, and Restaurant Management System designed specifically for Myanmar retail and hospitality businesses. From supermarkets to restaurants, cafes to retail stores - streamline your operations, track inventory in real-time, manage tables and orders efficiently, and boost your sales with our intuitive and powerful all-in-one solution.',
                 'feature-pos': 'Complete Point of Sale System',
                 'feature-inventory': 'Real-time Inventory Management',
+                'feature-restaurant': 'Restaurant & Table Management',
                 'feature-analytics': 'Sales Analytics & Reporting',
                 'feature-customers': 'Customer Management',
                 'feature-mobile': 'Mobile-Friendly Interface',
-                'feature-myanmar': 'Myanmar Language Support',
-                'demo-title': 'Try Our POS System',
-                'demo-subtitle': 'Experience the power of our Point of Sale system with a live demo',
+                'feature-multilang': 'Multi-Language Support (Myanmar, English, Chinese)',
+                'demo-title': 'Try Our POS & Restaurant System',
+                'demo-subtitle': 'Experience the power of our all-in-one management system with a live demo',
                 'demo-button': 'Launch Demo',
-                'demo-url': 'pos.tripleseven.cloud'
+                'demo-url': 'pos.tripleseven.cloud',
+                
+                // Stats Section
+                'stat-projects': 'Projects Completed',
+                'stat-clients': 'Happy Clients',
+                'stat-experience': 'Years Experience',
+                'stat-support': 'Support Available',
+                
+                // About Section
+                'about-title': 'About Triple Seven Cloud',
+                'about-subtitle': 'Your trusted technology partner in Myanmar\'s digital transformation journey',
+                'about-para1': 'Founded in the heart of Mandalay, Triple Seven Cloud is a forward-thinking software development startup dedicated to empowering businesses across Myanmar with cutting-edge technology solutions.',
+                'about-para2': 'We specialize in cloud technologies, custom software development, and digital transformation services that help businesses modernize their operations and achieve sustainable growth in today\'s competitive landscape.',
+                'about-para3': 'Our team of experienced developers and cloud architects brings international expertise to the local market, ensuring our clients receive world-class solutions tailored to the unique challenges and opportunities in Myanmar.',
+                'feature1-title': 'Innovation First',
+                'feature1-desc': 'Leveraging latest technologies to deliver cutting-edge solutions',
+                'feature2-title': 'Local Expertise',
+                'feature2-desc': 'Deep understanding of Myanmar\'s business landscape and needs',
+                'feature3-title': 'Quality Assured',
+                'feature3-desc': 'Commitment to delivering high-quality, reliable solutions',
+                'feature4-title': 'Agile Delivery',
+                'feature4-desc': 'Fast, iterative development with transparent communication',
+                
+                // Contact Section
+                'contact-title': 'Ready to Transform Your Business?',
+                'contact-desc': 'Let\'s discuss how Triple Seven Cloud can help you achieve your technology goals and drive your business forward.',
+                'contact-cta': 'Contact Us Today',
+                'contact-location': 'Mandalay, Myanmar',
+                'contact-hours': 'Mon - Fri: 9AM - 6PM (MMT)'
             },
             mm: {
                 // Navigation
@@ -1130,18 +1165,163 @@
                 // Products Section
                 'products-title': 'ကျွန်ုပ်တို့၏ ထုတ်ကုန်များ',
                 'products-subtitle': 'မြန်မာနိုင်ငံ လုပ်ငန်းများအတွက် အထူးဒီဇိုင်းထုတ်ထားသော ဆန်းသစ်သော ဆော့ဝဲရေး ဖြေရှင်းချက်များ',
-                'product-pos-title': 'Triple Seven POS',
-                'product-pos-desc': 'မြန်မာနိုင်ငံ လက်လီရောင်းချမှု လုပ်ငန်းများအတွက် အထူးဒီဇိုင်းထုတ်ထားသော ပြည့်စုံသော Point of Sale နှင့် ဆူပါမားကက် ပစ္စည်းကိန်း စီမံခန့်ခွဲမှု စနစ်။ သင့်လုပ်ငန်းလည်ပတ်မှုကို ချောမွေ့စေပြီး၊ ပစ္စည်းကိန်းကို အချိန်နှင့်တပြေးညီ ခြေရာခံကာ၊ ကျွန်ုပ်တို့၏ အသုံးပြုရလွယ်ကူပြီး အစွမ်းထက်သော POS ဖြေရှင်းချက်ဖြင့် သင့်ရောင်းချမှုကို မြှင့်တင်ပါ။',
+                'product-pos-title': 'Triple Seven POS နှင့် စားသောက်ဆိုင် စီမံခန့်ခွဲမှု စနစ်',
+                'product-pos-desc': 'မြန်မာနိုင်ငံ လက်လီရောင်းချမှုနှင့် ဧည့်ဝန်ထမ်းလုပ်ငန်းများအတွက် အထူးဒီဇိုင်းထုတ်ထားသော ပြည့်စုံသော Point of Sale၊ ဆူပါမားကက် ပစ္စည်းကိန်း စီမံခန့်ခွဲမှုနှင့် စားသောက်ဆိုင် စီမံခန့်ခွဲမှု စနစ်။ ဆူပါမားကက်များမှ စားသောက်ဆိုင်များ၊ ကော်ဖီဆိုင်များမှ လက်လီဆိုင်များအထိ - သင့်လုပ်ငန်းလည်ပတ်မှုကို ချောမွေ့စေပြီး၊ ပစ္စည်းကိန်းကို အချိန်နှင့်တပြေးညီ ခြေရာခံကာ၊ စားပွဲများနှင့် အော်ဒါများကို ထိရောက်စွာ စီမံခန့်ခွဲပြီး၊ ကျွန်ုပ်တို့၏ အသုံးပြုရလွယ်ကူပြီး အစွမ်းထက်သော တစ်ခုတည်း ဖြေရှင်းချက်ဖြင့် သင့်ရောင်းချမှုကို မြှင့်တင်ပါ။',
                 'feature-pos': 'ပြည့်စုံသော Point of Sale စနစ်',
                 'feature-inventory': 'အချိန်နှင့်တပြေးညီ ပစ္စည်းကိန်း စီမံခန့်ခွဲမှု',
+                'feature-restaurant': 'စားသောက်ဆိုင်နှင့် စားပွဲ စီမံခန့်ခွဲမှု',
                 'feature-analytics': 'ရောင်းချမှု ခွဲခြမ်းစိတ်ဖြာမှုနှင့် အစီရင်ခံစာများ',
                 'feature-customers': 'ဖောက်သည် စီမံခန့်ခွဲမှု',
                 'feature-mobile': 'မိုဘိုင်းဖုန်းနှင့် သဟဇာတဖြစ်သော အင်တာဖေ့စ်',
-                'feature-myanmar': 'မြန်မာဘာသာ ပံ့ပိုးမှု',
-                'demo-title': 'ကျွန်ုပ်တို့၏ POS စနစ်ကို စမ်းကြည့်ပါ',
-                'demo-subtitle': 'လက်ငင်း demo ဖြင့် ကျွန်ုပ်တို့၏ Point of Sale စနစ်၏ စွမ်းအားကို ခံစားကြည့်ပါ',
+                'feature-multilang': 'ဘာသာစုံ ပံ့ပိုးမှု (မြန်မာ၊ အင်္ဂလိပ်၊ တရုတ်)',
+                'demo-title': 'ကျွန်ုပ်တို့၏ POS နှင့် စားသောက်ဆိုင် စနစ်ကို စမ်းကြည့်ပါ',
+                'demo-subtitle': 'လက်ငင်း demo ဖြင့် ကျွန်ုပ်တို့၏ တစ်ခုတည်း စီမံခန့်ခွဲမှုစနစ်၏ စွမ်းအားကို ခံစားကြည့်ပါ',
                 'demo-button': 'Demo လွှတ်တင်ရန်',
-                'demo-url': 'pos.tripleseven.cloud'
+                'demo-url': 'pos.tripleseven.cloud',
+                
+                // Stats Section
+                'stat-projects': 'ပြီးစီးခဲ့သော ပရောဂျက်များ',
+                'stat-clients': 'ကျေနပ်သော ဖောက်သည်များ',
+                'stat-experience': 'နှစ် အတွေ့အကြုံ',
+                'stat-support': 'ပံ့ပိုးမှု ရရှိနိုင်သည်',
+                
+                // About Section
+                'about-title': 'Triple Seven Cloud အကြောင်း',
+                'about-subtitle': 'မြန်မာနိုင်ငံ၏ ဒစ်ဂျစ်တယ် အသွင်ပြောင်းလဲရေး ခရီးတွင် သင့်ယုံကြည်စိတ်ချရသော နည်းပညာ လုပ်ဖော်ကိုင်ဖက်',
+                'about-para1': 'မန္တလေး၏ ဗဟိုတွင် တည်ထောင်ထားသော Triple Seven Cloud သည် မြန်မာနိုင်ငံတစ်ဝှမ်းရှိ လုပ်ငန်းများကို နောက်ဆုံးပေါ် နည်းပညာ ဖြေရှင်းချက်များဖြင့် စွမ်းဆောင်နိုင်အောင် ပြုလုပ်ပေးရန် ရည်မှန်းထားသော အနာဂတ်မျှော် ဆော့ဝဲရေး တည်ဆောက်မှု startup တစ်ခုဖြစ်သည်။',
+                'about-para2': 'ကျွန်ုပ်တို့သည် cloud နည်းပညာများ၊ စိတ်ကြိုက် ဆော့ဝဲရေး တည်ဆောက်မှုနှင့် လုပ်ငန်းများကို ၎င်းတို့၏ လုပ်ငန်းလည်ပတ်မှုကို ခေတ်မီအောင်ပြုလုပ်ပြီး ယနေ့ ယှဉ်ပြိုင်မှု ပတ်ဝန်းကျင်တွင် ရေရှည်ဖွံ့ဖြိုးတိုးတက်မှု ရရှိနိုင်စေမည့် ဒစ်ဂျစ်တယ် အသွင်ပြောင်းလဲရေး ဝန်ဆောင်မှုများတွင် အထူးပြုထားပါသည်။',
+                'about-para3': 'ကျွန်ုပ်တို့၏ အတွေ့အကြုံရင့် developer များနှင့် cloud architect များသည် နိုင်ငံတကာ ကျွမ်းကျင်မှုကို ဒေသတွင်း စျေးကွက်သို့ ယူဆောင်လာပြီး ကျွန်ုပ်တို့၏ ဖောက်သည်များသည် မြန်မာနိုင်ငံရှိ ထူးခြားသော စိန်ခေါ်မှုများနှင့် အခွင့်အလမ်းများအတွက် အထူးပြုလုပ်ထားသော ကမ္ဘာ့အဆင့် ဖြေရှင်းချက်များ ရရှိစေသည်။',
+                'feature1-title': 'ဆန်းသစ်မှု အရင်ဆုံး',
+                'feature1-desc': 'နောက်ဆုံးပေါ် နည်းပညာများကို အသုံးပြု၍ ခေတ်မီ ဖြေရှင်းချက်များ ပေးအပ်ခြင်း',
+                'feature2-title': 'ဒေသတွင်း ကျွမ်းကျင်မှု',
+                'feature2-desc': 'မြန်မာနိုင်ငံ၏ လုပ်ငန်း ပတ်ဝန်းကျင်နှင့် လိုအပ်ချက်များကို နက်နဲစွာ နားလည်မှု',
+                'feature3-title': 'အရည်အသွေး အာမခံ',
+                'feature3-desc': 'မြင့်မားသော အရည်အသွေး၊ ယုံကြည်စိတ်ချရသော ဖြေရှင်းချက်များ ပေးအပ်ရန် ကတိကဝတ်',
+                'feature4-title': 'Agile ပေးပို့မှု',
+                'feature4-desc': 'ပွင့်လင်းမြင်သာသော ဆက်သွယ်မှုဖြင့် မြန်ဆန်၊ ထပ်တလဲလဲ တည်ဆောက်မှု',
+                
+                // Contact Section
+                'contact-title': 'သင့်လုပ်ငန်းကို အသွင်ပြောင်းလဲရန် အဆင်သင့်ပြီလား?',
+                'contact-desc': 'Triple Seven Cloud သည် သင့်နည်းပညာ ပန်းတိုင်များကို အောင်မြင်ရရှိစေရန်နှင့် သင့်လုပ်ငန်းကို တိုးမြှင့်ရန် မည်သို့ ကူညီနိုင်သည်ကို ဆွေးနွေးကြပါစို့။',
+                'contact-cta': 'ယနေ့ပဲ ဆက်သွယ်ပါ',
+                'contact-location': 'မန္တလေး၊ မြန်မာနိုင်ငံ',
+                'contact-hours': 'တနင်္လာ - သောကြာ: နံနက် 9 နာရီ - ညနေ 6 နာရီ (MMT)'
+            },
+            zh: {
+                // Navigation
+                'nav-home': '首页',
+                'nav-services': '服务',
+                'nav-products': '产品',
+                'nav-about': '关于我们',
+                'nav-contact': '联系我们',
+                
+                // Hero Section
+                'hero-tagline': '缅甸领先的软件开发和云解决方案',
+                'hero-location': '缅甸曼德勒',
+                'hero-cta': '立即开始',
+                
+                // Services Section
+                'services-title': '我们的服务',
+                'services-subtitle': '为缅甸及全球现代企业量身定制的全面IT解决方案',
+                
+                // Service 1 - Software Development
+                'service1-title': '软件开发',
+                'service1-desc': '采用尖端技术构建的定制软件解决方案，推动您的业务发展。',
+                'service1-item1': 'Web应用程序和门户',
+                'service1-item2': '移动应用开发 (iOS/Android)',
+                'service1-item3': '企业软件解决方案',
+                'service1-item4': 'API开发与集成',
+                'service1-item5': '数据库设计与优化',
+                
+                // Service 2 - Cloud Migration
+                'service2-title': '云迁移',
+                'service2-desc': '以最少的停机时间和最高的效率将您的基础设施无缝过渡到云端。',
+                'service2-item1': '云战略与规划',
+                'service2-item2': '基础设施评估',
+                'service2-item3': '安全数据迁移',
+                'service2-item4': '应用现代化',
+                'service2-item5': '成本优化策略',
+                
+                // Service 3 - Cloud Architecture
+                'service3-title': '云架构',
+                'service3-desc': '设计和实施可扩展、可靠的云架构，与您的业务需求一起增长。',
+                'service3-item1': '云基础设施设计',
+                'service3-item2': '多云解决方案',
+                'service3-item3': '微服务架构',
+                'service3-item4': '自动扩展与负载均衡',
+                'service3-item5': '性能优化',
+                
+                // Service 4 - Security Consulting
+                'service4-title': '安全咨询',
+                'service4-desc': '全面的安全解决方案，保护您的数字资产并确保合规性。',
+                'service4-item1': '安全审计与评估',
+                'service4-item2': '合规管理',
+                'service4-item3': '身份与访问管理',
+                'service4-item4': '数据保护与隐私',
+                'service4-item5': '事件响应计划',
+                
+                // Service 5 - Digital Transformation
+                'service5-title': '数字化转型',
+                'service5-desc': '通过创新的数字解决方案和现代技术改造您的业务流程。',
+                'service5-item1': '流程自动化',
+                'service5-item2': '数字化工作流设计',
+                'service5-item3': '系统集成',
+                'service5-item4': '物联网解决方案',
+                'service5-item5': '人工智能与机器学习',
+                
+                // Service 6 - Technical Support
+                'service6-title': '技术支持',
+                'service6-desc': '全天候技术支持和维护，确保您的系统平稳高效运行。',
+                'service6-item1': '系统监控',
+                'service6-item2': '性能调优',
+                'service6-item3': '备份与恢复',
+                'service6-item4': '技术咨询',
+                'service6-item5': '应急响应',
+                
+                // Products Section
+                'products-title': '我们的产品',
+                'products-subtitle': '专为缅甸企业设计的创新软件解决方案',
+                'product-pos-title': 'Triple Seven POS 和餐厅管理系统',
+                'product-pos-desc': '专为缅甸零售和酒店业务设计的综合销售点、超市库存管理和餐厅管理系统。从超市到餐厅、咖啡厅到零售店 - 简化运营、实时跟踪库存、高效管理餐桌和订单，通过我们直观而强大的一体化解决方案提升销售额。',
+                'feature-pos': '完整的销售点系统',
+                'feature-inventory': '实时库存管理',
+                'feature-restaurant': '餐厅与餐桌管理',
+                'feature-analytics': '销售分析与报告',
+                'feature-customers': '客户管理',
+                'feature-mobile': '移动友好界面',
+                'feature-multilang': '多语言支持（缅甸语、英语、中文）',
+                'demo-title': '试用我们的POS和餐厅系统',
+                'demo-subtitle': '通过实时演示体验我们一体化管理系统的强大功能',
+                'demo-button': '启动演示',
+                'demo-url': 'pos.tripleseven.cloud',
+                
+                // Stats Section
+                'stat-projects': '完成的项目',
+                'stat-clients': '满意的客户',
+                'stat-experience': '年经验',
+                'stat-support': '支持服务',
+                
+                // About Section
+                'about-title': '关于 Triple Seven Cloud',
+                'about-subtitle': '您值得信赖的技术合作伙伴，助力缅甸数字化转型之旅',
+                'about-para1': 'Triple Seven Cloud 成立于曼德勒市中心，是一家具有前瞻性的软件开发初创公司，致力于为缅甸各地企业提供尖端技术解决方案。',
+                'about-para2': '我们专注于云技术、定制软件开发和数字化转型服务，帮助企业实现运营现代化，在当今竞争激烈的环境中实现可持续增长。',
+                'about-para3': '我们经验丰富的开发人员和云架构师团队将国际专业知识引入本地市场，确保我们的客户获得针对缅甸独特挑战和机遇量身定制的世界级解决方案。',
+                'feature1-title': '创新至上',
+                'feature1-desc': '利用最新技术提供尖端解决方案',
+                'feature2-title': '本地专业知识',
+                'feature2-desc': '深入了解缅甸的商业环境和需求',
+                'feature3-title': '质量保证',
+                'feature3-desc': '致力于提供高质量、可靠的解决方案',
+                'feature4-title': '敏捷交付',
+                'feature4-desc': '快速迭代开发，透明沟通',
+                
+                // Contact Section
+                'contact-title': '准备好转型您的业务了吗？',
+                'contact-desc': '让我们讨论 Triple Seven Cloud 如何帮助您实现技术目标并推动业务发展。',
+                'contact-cta': '立即联系我们',
+                'contact-location': '缅甸曼德勒',
+                'contact-hours': '周一至周五：上午9点 - 下午6点 (MMT)'
             }
         };
 
